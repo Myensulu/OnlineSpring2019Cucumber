@@ -10,6 +10,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -71,9 +72,9 @@ public class Driver {
                 case "remote_chrome":
                     DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                     desiredCapabilities.setPlatform(Platform.ANY);
-                    desiredCapabilities.setBrowserName("chrome");
+                    desiredCapabilities.setBrowserName(BrowserType.CHROME);
                     try {
-                        driver = new RemoteWebDriver(new URL("http://54.152.227.253:4444/wd/hub"), desiredCapabilities);
+                        driver = new RemoteWebDriver(new URL("http://ec2-54-204-67-55.compute-1.amazonaws.com:4444/wd/hub"), desiredCapabilities);
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
